@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="calculator-body">
+
+	<% unless @result == nil %>
+		<h1>
+			<%= @first_number %>
+			<%= @method %>
+			<%= @second_number %>
+			=
+			<%= @result %>
+		</h1>
+	<% end %>
+
+	<p> First number: </p>
+
+		<form action="/calculate" method ="POST">
+			<input type="number" name="first_number">
+
+	<p>Second number:</p>
+
+			<input type="number" name="second_number">
+
+	<p>Choose method:</p>
+
+			<input type="submit" name="method" value="+">
+			<input type="submit" name="method" value="-">
+			<input type="submit" name="method" value="*">
+			<input type="submit" name="method" value="/">
+
+		</form>
+	</div>
+</body>
+</html>
