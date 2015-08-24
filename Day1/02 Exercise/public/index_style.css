@@ -1,3 +1,11 @@
+.picture {
+	text-align: center;
+}
+
+div.picture {
+	text-align: center;
+}
+
 div.text {
 	width: 80%;
 	margin: auto;
@@ -7,7 +15,7 @@ div.text {
 	font-size:  45px;
 	color: orange;
 	text-align: center;
-	padding-top: 250px;
+	padding-top: 0px;
 }
 
 div.button-container {
@@ -28,4 +36,13 @@ div.form-container {
 
 a.showhide {
 	color: blue;
+}
+
+div.show-phrases {
+	margin-top: 25px;
+	text-align: center;
+	}
+
+span.remove {
+	margin-left: 1px;
 }

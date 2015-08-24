@@ -5,6 +5,10 @@
 </head>
 <body>
 
+<!-- 	<div class="picture">
+		<img src="sinatra.gif" alt="">
+	</div>
+ -->
 	<div class="text">
 		<p class="phrase">
 			<%= @random_phrase %>
@@ -12,7 +16,7 @@
 	</div>
 
 	<div class="button-container">
-		<a href="/show" class="button">Refresh</a>
+		<a href="/" class="button">Refresh</a>
 	</div>
 
 	<div class="form-container">
@@ -25,7 +29,15 @@
 	<div class="show-phrases">
 		<a href="/showall">Show phrases</a>
 		<ul>
-			<%= @list %>
+			<% unless @list == nil %>
+				<% @list.each do |phrase| %>
+					<li><%=  phrase %></li>
+						<form action="/delete" method="POST">
+							<input type="submit" value="X">
+							<input type="hidden" name="delete_phrase" value=<%= phrase %>>
+						</form>
+				<% end %>
+			<% end %>
 		</ul>
 	</div>
 
