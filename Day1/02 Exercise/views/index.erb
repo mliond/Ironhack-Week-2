@@ -5,13 +5,18 @@
 </head>
 <body>
 
-<!-- 	<div class="picture">
+	<h1>Second Sinatra Exercise</h1>
+	<div class="picture">
 		<img src="sinatra.gif" alt="">
 	</div>
- -->
+
 	<div class="text">
 		<p class="phrase">
-			<%= @random_phrase %>
+			<% unless @random_phrase == nil %>
+				<%= @random_phrase %>
+			<% else %>
+				Please add a phrase.
+			<% end %>
 		</p>
 	</div>
 
@@ -34,7 +39,7 @@
 					<li><%=  phrase %></li>
 						<form action="/delete" method="POST">
 							<input type="submit" value="X">
-							<input type="hidden" name="delete_phrase" value=<%= phrase %>>
+							<input type="hidden" name="delete_phrase" value="<%= phrase %>">
 						</form>
 				<% end %>
 			<% end %>

@@ -9,27 +9,24 @@ phrases = ["Unpleasant nor diminution excellence apartments imprudence the met n
 list = nil
 
 get "/" do
-	@phrases = phrases
-	@random_phrase = @phrases[rand(0..(@phrases.count-1))]
+	@random_phrase = phrases.sample
 	@list = list
 	erb :index
 end
 
 get "/add" do
-	@phrases = phrases
-	@phrases.push(params[:new_phrase])
+	phrases.push(params[:new_phrase])
 	redirect to "/"
 end
 
 get "/showall" do
 	@list = phrases
-	@random_phrase = @list[rand(0..(@list.count-1))]
+	@random_phrase = @list.sample
 	erb :index
 end
 
 post "/delete" do
-	@phrases = phrases
-	@phrases.delete(params[:delete_phrase])
+	phrases.delete(params[:delete_phrase])
 	redirect to "/showall"
 end
 
