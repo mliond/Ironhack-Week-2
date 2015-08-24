@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="index_style.css">
+</head>
+<body>
+
+	<div class="text">
+		<p class="phrase">
+			<%= @random_phrase %>
+		</p>
+	</div>
+
+	<div class="button-container">
+		<a href="/show" class="button">Refresh</a>
+	</div>
+
+	<div class="form-container">
+		<p>Add a new phrase:</p>
+		<form action="/add" method ="GET">
+			<input type="text" name="new_phrase">
+		</form>
+	</div>
+
+	<div class="show-phrases">
+		<a href="/showall">Show phrases</a>
+		<ul>
+			<%= @list %>
+		</ul>
+	</div>
+
+</body>
+</html>

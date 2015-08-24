@@ -6,10 +6,14 @@
 
 <body>
 
-	<form action ="/" method="post" enctype="multipart/form-data">
+	<% unless @num_words == nil %>
+		<p> The number of words is <%= @num_words %></p>
+	<% end %>
+
+	<form action ="/count_words" method="post" enctype="multipart/form-data">
 		<p>
 			<label for="file">File:</label>
-			<input type="file" name="file">
+			<input type="file" name="my_file">
 		</p>
 
 		<p>

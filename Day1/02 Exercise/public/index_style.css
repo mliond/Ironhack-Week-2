@@ -1,0 +1,31 @@
+div.text {
+	width: 80%;
+	margin: auto;
+}
+
+.phrase {
+	font-size:  45px;
+	color: orange;
+	text-align: center;
+	padding-top: 250px;
+}
+
+div.button-container {
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+a.button {
+	border: 3px orange;
+	padding: 5px;
+	background-color: #F39DEB;
+	font-size: 18px;
+}
+
+div.form-container {
+	text-align: center;
+	}
+
+a.showhide {
+	color: blue;
+}
