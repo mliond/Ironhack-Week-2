@@ -1,0 +1,23 @@
+h1 {
+	text-align: center;
+	color: blue;
+	font-size: 36px;
+}
+
+.list {
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;
+	color: blue;
+	font-size: 26px;
+	border: 2px;
+	border-color: blue;
+}
+
+ul {
+  list-style-type: none;
+	display: inline-block;
+}
+
+li {
+}

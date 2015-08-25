@@ -51,4 +51,6 @@ div.show-phrases {
 
 span.remove {
 	margin-left: 1px;
+	display: inline-block;
+
 }

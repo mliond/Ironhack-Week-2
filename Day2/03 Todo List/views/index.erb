@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List</title>
+	<link rel="stylesheet" href="formatting.css">
+</head>
+<body>
+	<h1>ToDo List</h1>
+
+	<div class="list">
+
+		<form action="/add_post" method="get">
+			<input type="text" name="new_post">
+			<input type="submit" name="submit" value="add task!">
+		</form>
+
+		<ul>
+			<% @list.length > 0  %>
+				<% @list.each do |item| %>
+					<li><%= item.content %></li>
+					<form action="/done" method="POST">
+						<input type="submit" value="X">
+						<input type="hidden" name="delete_item" value="<%= item.id %>">
+					</form>
+				<% end %>
+			<% end %>
+		</ul>
+
+		<h1>Done items:</h1>
+		<ul>
+			<% @done_list.length > 0  %>
+				<% @done_list.each do |item| %>
+					<li><%= item.content %></li>
+				<% end %>
+			<% end %>
+		</ul>
+
+	</div>
+
+</body>
+</html>
