@@ -15,7 +15,7 @@
 		</form>
 
 		<ul>
-			<% @list.length > 0  %>
+			<% if @list.length > 0  %>
 				<% @list.each do |item| %>
 					<li><%= item.content %></li>
 					<form action="/done" method="POST">
@@ -28,7 +28,7 @@
 
 		<h1>Done items:</h1>
 		<ul>
-			<% @done_list.length > 0  %>
+			<% if @done_list.length > 0 %>
 				<% @done_list.each do |item| %>
 					<li><%= item.content %></li>
 				<% end %>

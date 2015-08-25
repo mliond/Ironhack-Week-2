@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="formatting.css">
+</head>
+<body>
+	<h1>Todo List</h1>
+		<% @list.each do |item| %>
+			<li><%= item.content %></li>
+		<% end %>
+
+</body>
+</html>
