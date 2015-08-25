@@ -1,4 +1,4 @@
-require 'Marshal'
+require 'json'
 
 class TaskStorage
 	attr_accessor :list
@@ -14,8 +14,20 @@ class TaskStorage
 	# end
 
 	# def save_to_file
-	# 	serialized_array = Marshal.dump(@list)
-	# 	File.open('save.txt', 'w') {|f| f.write(serialized_array) }
+	# 	tempHash = {
+	# 	    "content" => "content",
+	# 	    "id" => "id",
+	# 	    "status" => "status"
+	# 	}
+	# 	File.open("public/temp.json","w") do |f|
+	# 	  f.write(tempHash.to_json)
+	# 	end
 	# end
+
+	# def save_to_file
+	# 	hash = {}
+	# 	@list.each do |item|
+	# 		hash
+
 
 end

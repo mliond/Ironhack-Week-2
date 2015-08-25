@@ -70,10 +70,10 @@ post "/delete_item" do
 	redirect to("/")
 end
 
-# post "/save" do
-# 	my_taskstorage.save_to_file
-# 	redirect to("/")
-# end
+post "/save" do
+	my_taskstorage.save_to_file
+	redirect to("/")
+end
 
 # post "/clear" do
 # 	session[:save] = nil

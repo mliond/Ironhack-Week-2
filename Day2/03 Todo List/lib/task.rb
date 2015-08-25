@@ -9,8 +9,8 @@ class Task
 		@status = status
 	end
 
-	# def change_status
-	# 	@status = @status == true ? false : true
-	# end
+	def change_status
+		@status = @status == true ? false : true
+	end
 
 end
