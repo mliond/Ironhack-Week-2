@@ -5,9 +5,6 @@ class Calculator
 	end
 
 	def add
-		@numbers.reduce(:+)
+		@numbers.reduce(0,:+)
 	end
 end
-
-calculator = Calculator.new("4,5")
-puts calculator.add
