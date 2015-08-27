@@ -4,45 +4,39 @@ require 'awesome_print'
 
 class Grid
 	def initialize
-		@grid = 			[[1,1,0,0,0,0,0,0],
-						 			 [1,0,0,0,1,1,0,0],
-						 			 [1,0,1,0,1,1,1,1],
-						 			 [1,1,0,0,1,1,1,1],
-						 			 [1,0,0,0,0,0,0,0],
-						 			 [1,0,0,0,1,1,0,0],
-						 			 [1,0,0,0,1,1,1,1],
-						 			 [1,0,0,0,1,1,1,1]]
+		@grid = 			[[0,0,0,0,0,0,0,0],
+									 [0,0,0,0,0,0,0,0],
+									 [0,1,1,1,0,0,0,0],
+									 [0,0,0,0,0,0,0,0],
+									 [0,1,0,1,0,0,0,0],
+									 [0,0,1,0,0,1,0,0],
+									 [0,0,0,0,0,0,0,0],
+									 [0,0,0,0,0,0,0,0]]
 	end
 
 	def iterate_through_grid
-		ap @grid
 
-		# @grid.each_with_index do |row, xnd|
-		# 	row.each_with_index do |column, ynd|
-		# 		new_state = create_neighbor_array(column, xnd, ynd)
-		# 		column = new_state
-		# 	end
-		# end
+		next_generation = []
+			@grid[(1..6)].each_with_index do |row, i|
+				row[i] = []
+				row[(1..6)].each_with_index do |value, k|
+					array = create_neighbor_array(i, k)
+					# binding.pry
+					new_state = check_a_cell(value, array)
+					row[i] << new_state
+				end
+				next_generation << row[i]
+			end
 
-		puts create_neighbor_array(1, 2, 2)
-
-
-		ap @grid
+		ap next_generation
 	end
 
-	def create_neighbor_array(column, xnd, ynd)
-		i = xnd
-		k = ynd
-		state = column
+	def create_neighbor_array(i, k)
+	 # 	i += 1
+		# k += 1
 
-		if i == 0
-			neighbor_array = [@grid[i][k-1],@grid[i][k+1],@grid[i+1][k-1],@grid[i+1][k],@grid[i+1][k+1]]
-		elsif k == 0
-
-			neighbor_array =
-		# cell_position = [i][k]
 		neighbor_array = [@grid[i-1][k-1], @grid[i-1][k], @grid[i-1][k+1], @grid[i][k+1], @grid[i+1][k+1], @grid[i+1][k], @grid[i+1][k-1], @grid[i][k-1]]
-		check_a_cell(state, neighbor_array)
+		neighbor_array
 	end
 
 	def check_a_cell(state, neighbor_array)
