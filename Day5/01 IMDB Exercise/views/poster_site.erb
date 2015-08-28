@@ -5,12 +5,26 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>These are 9 movies for your keyword: "<%= @keyword %>"</h1>
+
+	<% sample_movie = @movie_infos.sample %>
+	<% sample_rating  = sample_movie[2] %>
+	<% sample_title = sample_movie[0] %>
+
+	<h1>These are 9 items for your keyword: "<%= @keyword %>"</h1>
+	<h2>Click the movie with the rating: <%= sample_rating %></h2>
 
 	<div class="poster-container">
-		<% @url_array.each do |url| %>
-			<img class ="poster" src="<%= url %>">
+		<% @movie_infos.each do |item| %>
+			<% if item[2] == sample_rating %>
+				<% answer = "alert('CORRECT')" %>
+			<% else %>
+				<% answer = "alert('NOT CORRECT')" %>
+			<% end %>
+
+			<img class ="poster" src="<%= item[1] %>" onClick="<%= answer %>" >
 		<% end %>
 	</div>
+
+	<p class="upsidedown"><%= sample_title %></p>
 </body>
 </html>

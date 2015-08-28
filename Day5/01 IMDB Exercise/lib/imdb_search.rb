@@ -6,23 +6,19 @@ class ImdbSearch
 	def initialize
 	end
 
-	def check_imdb(keyword)
-		movie_array = Imdb::Search.new(keyword).movies()
+	def check_imdb_for_keyword(keyword)
+		Imdb::Search.new(keyword).movies()
 	end
 
-	def fetch_poster_URL(movie_array)
-		poster_url_arr = []
-
+	def get_movie_info(movie_array)
+		specific_infos = []
 		movie_array.each do  |movie|
-			break if poster_url_arr.size == 9
-				url = movie.poster
+			break if specific_infos.size == 9
 				unless url == nil
-					poster_url_arr << url
+					specific_infos << [movie.title, movie.poster, movie.rating] # imdb gem functions
 				end
 			end
-
-		return poster_url_arr
+		return specific_infos
 	end
 
 end
-
