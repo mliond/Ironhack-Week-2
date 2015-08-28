@@ -14,7 +14,7 @@ class ImdbSearch
 		specific_infos = []
 		movie_array.each do  |movie|
 			break if specific_infos.size == 9
-				unless url == nil
+				unless movie.poster == nil
 					specific_infos << [movie.title, movie.poster, movie.rating] # imdb gem functions
 				end
 			end

@@ -10,7 +10,7 @@
 	<% sample_rating  = sample_movie[2] %>
 	<% sample_title = sample_movie[0] %>
 
-	<h1>These are 9 items for your keyword: "<%= @keyword %>"</h1>
+	<h1>These are 9 items for your keyword: "<%= @keyword.capitalize %>"</h1>
 	<h2>Click the movie with the rating: <%= sample_rating %></h2>
 
 	<div class="poster-container">
@@ -24,7 +24,7 @@
 			<img class ="poster" src="<%= item[1] %>" onClick="<%= answer %>" >
 		<% end %>
 	</div>
-
+	<p><strong>Hint:</strong></p>
 	<p class="upsidedown"><%= sample_title %></p>
 </body>
 </html>
