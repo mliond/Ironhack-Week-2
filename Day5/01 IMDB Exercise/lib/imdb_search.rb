@@ -14,7 +14,7 @@ class ImdbSearch
 		poster_url_arr = []
 
 		movie_array.each do  |movie|
-			break if poster_url_arr.size == 3
+			break if poster_url_arr.size == 9
 				url = movie.poster
 				unless url == nil
 					poster_url_arr << url

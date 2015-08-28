@@ -12,6 +12,8 @@ get "/look" do
 	imdb = ImdbSearch.new
 	movie_array = imdb.check_imdb(params[:keyword])
 	@url_array = imdb.fetch_poster_URL(movie_array)
+	@keyword = params[:keyword]
 	erb :poster_site
 end
+
 

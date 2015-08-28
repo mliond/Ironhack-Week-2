@@ -1,0 +1,28 @@
+/*all of the erb files*/
+h1 {
+	text-align: center;
+}
+
+/*index.erb*/
+form {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*poster_site.erb*/
+div.poster-container {
+	width: 650px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+img.poster {
+	width: 200px;
+	height: 300px;
+	padding: 5px;
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	margin: 0;
+}
+

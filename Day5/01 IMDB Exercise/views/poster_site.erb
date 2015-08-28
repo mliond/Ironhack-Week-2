@@ -5,10 +5,12 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	yoyoyoyoyo
+	<h1>These are 9 movies for your keyword: "<%= @keyword %>"</h1>
 
-	<% @url_array.each do |url| %>
-		<img src="<%= url %>">
-	<% end %>
+	<div class="poster-container">
+		<% @url_array.each do |url| %>
+			<img class ="poster" src="<%= url %>">
+		<% end %>
+	</div>
 </body>
 </html>
