@@ -3,9 +3,6 @@ require 'awesome_print'
 require 'pry'
 
 class ImdbSearch
-	def initialize
-	end
-
 	def check_imdb_for_keyword(keyword)
 		Imdb::Search.new(keyword).movies()
 	end

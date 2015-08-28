@@ -1,4 +1,5 @@
 require_relative '../lib/imdb_search'
+require 'imdb'
 
 RSpec.describe ImdbSearch do
   before :each do
@@ -6,8 +7,8 @@ RSpec.describe ImdbSearch do
 
   describe "#check_imdb" do
   	it "should look on IMDB for a given keyword and return a movie array" do
-  		@imdb_search = ImdbSearch.new.check_imdb("funny")
-  		expect(@imdb_search).to be(Array)
+  		@sample_search = ImdbSearch.new.check_imdb_for_keyword("pokemon")
+  		expect(@sample_search).to match_array(Imdb::Search.new("pokemon").movies())
 		end
 	end
 
